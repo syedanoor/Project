@@ -1,0 +1,56 @@
+﻿@model lab.Models.Car
+
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<div class="main">
+    <h1>Do you want to Delete this Info?</h1>
+    <div class="content">
+        <div id="container">
+            <fieldset>
+
+                <div style="height:30px;width:400px; font-family:'Arabic Typesetting';font-size:22px">
+                    <p>Car Id: @Model.Id</p>
+                </div>
+                <div style="height:30px;width:400px;font-family:'arabic typesetting';font-size:22px">
+                    <p>CarModel: @Model.Model</p>
+                </div>
+
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarBrand: @Model.Brand</p>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarPrice: @Model.Price<p><br>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarColor: @Model.Color</p>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarImage: @Model.Image</p><br>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarStatus: @Model.Status</p><br>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>CarQuantity: @Model.Quantity</p><br>
+                </div>
+
+            </fieldset>
+        </div>
+
+
+        @using (Html.BeginForm())
+        {
+            //<div class="form">
+
+            <input type="submit" value="Delete" style="height:40px;width:150px;background-color:red;margin-left:230px" />
+            <a style="margin-left:345px;" href="~/CarsManagement/index" name="Back">Back</a>
+
+
+        }
+    </div>
+
+
+

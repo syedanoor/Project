@@ -1,0 +1,62 @@
+﻿
+@model List<lab.Models.News>
+@{
+    ViewBag.Title = "index";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="main">
+    <h1>View All Offers</h1>
+    @*<div class="content">*@
+        <div id="container">
+
+
+            <table style="border:double;border-color:black;margin-left:300px;">
+                <tr class="Coulm-name" style="margin-left:10px;margin-right:10px;border:double;border-color:black ;font-size:medium" >
+                    
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Delete
+                    </th>
+
+
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        
+                        <td>
+                            @item.Image
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+
+
+                       
+                        <td>
+                            <a href="~/CarsManagement/deleteNews/@item.Id">Delete</a>
+
+                        </td>
+                    </tr>
+                    
+                }
+                
+            </table>
+            <a style="margin-left:315px;" href="~/Admin/adminPanel" name="Back">Back</a>
+            
+        </div>
+    </div>
+@*</div>*@

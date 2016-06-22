@@ -1,0 +1,110 @@
+﻿
+
+
+
+
+<link href="/css/StyleSheet1.css" rel="stylesheet" type="text/css" media="all" />
+<script src="~/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    
+<div class="contact">
+    <div class="wrap">
+
+        
+        <div class="contact-top-pagination">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#"><span>Search</span></a></li>
+            </ul>
+        </div>
+        <div class="section group">
+           
+            <div class="col span_2_of_3">
+                <div class="contact-form">
+                    <h3>Search by</h3>
+                    <form class="demo">
+                        <div class="col span_1_of_3">
+                                <select id="searchtype">
+                                <option value="Select">Select</option>
+                                <option value="Brand">Brand</option>
+                                <option value="Price">Price</option>
+                                <option value="Model">Model</option>
+                                </select>
+                                <select id="search-box-input">
+                                <option value="0">Select</option>
+                                </select>
+                            <div id="check" >
+                                <p>Checking...</p>
+                            </div>
+                        </div>
+                   </form>                   
+                    </div>
+               </div>
+            <div id="sec">    
+                             
+            </div>
+          
+<script>
+    $(document).ready(function () {
+        $('#check').hide();
+        $('#search-box-input').hide();
+        
+        //on search type change
+        $('#searchtype').change(function () {
+           
+            var item = $('#searchtype').val();
+            $('#check').show();
+            $.getJSON("/Home/getItem?searchtype=" + item, function (data) {
+                $('#check').hide();
+                $('#searchtype').hide();
+                if (data != null) {
+                    $('#search-box-input').empty();
+                    $.each(data, function (i, item) {
+
+                        $("#search-box-input").append('<option value=' + item + '>' + item + ' </option>');
+
+                    });
+                    $('#search-box-input').show();
+                    
+                }
+
+                $('#search-box-input').change(function () {
+                    $('#sec').empty();
+                    $('#check').show();
+                    var n = $('#search-box-input').val();                   
+                    $.getJSON("/Home/getItemfromDb?search-box-input=" + n, function (data) {
+                        $('#check').hide();
+                        if (data)
+                        {
+                            var imag ="";
+                            $.each(data, function (i, item) {
+                                 imag = item.Image;
+                                $("#sec").append(' <a href="#"><img  src="~/images/'+item.Image+'"></a><p>Price:' + item.Price + '</p><p>Model:' + item.Model + '</p><p>Brand:' + item.Brand + '</p>')
+                            });
+                        }
+                        else
+                            alert("no data");
+                    });
+                   
+                    $('#searchtype').show();
+                    $('#search-box-input').hide();
+                   
+                });
+            });
+        });
+    });
+           
+ </script>
+                
+
+</div>
+        </div>
+    </div>
+    
+<!---end-contact---->
+<div class="clear"> </div>
+
+       
+
+
+
+   

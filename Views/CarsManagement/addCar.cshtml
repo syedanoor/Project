@@ -1,0 +1,64 @@
+﻿@model lab.Models.Car
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+};
+<div class="main">
+    <h1>Add Car Info</h1>
+    <div class="content">
+        <div id="container">
+
+            @using (Html.BeginForm("addCar", "CarsManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <fieldset>
+
+                    <div class="form">
+                        <h3>Car Id</h3>
+                        @Html.TextBoxFor(model => model.Id)
+                        @Html.ValidationMessageFor(model => model.Id)
+                        
+                            <h3>Car Model</h3>
+                            @Html.TextBoxFor(model => model.Model)
+                            @Html.ValidationMessageFor(model => model.Model)
+                        
+
+                            <h3>Car Color</h3>
+                            @Html.TextBoxFor(model => model.Color)
+                            @Html.ValidationMessageFor(model => model.Color)
+
+
+                            <h3>Car Status</h3>
+                            @Html.TextBoxFor(model => model.Status)
+                            @Html.ValidationMessageFor(model => model.Status)
+
+                            <h3>Car Price</h3>
+                            @Html.TextBoxFor(model => model.Price)
+                            @Html.ValidationMessageFor(model => model.Price)
+
+
+                            <h3>Car Brand</h3>
+                            @Html.TextBoxFor(model => model.Brand)
+                            @Html.ValidationMessageFor(model => model.Brand)
+
+                            <h3>Car Quantity</h3>
+                            @Html.TextBoxFor(model => model.Quantity)
+                            @Html.ValidationMessageFor(model => model.Quantity)
+
+                            <h3>Car Image</h3>
+                        @*<input type="file" name="Image" src="@Model.Image"/>*@
+                        <input type="file" name="Image" id="Image" style="font-family:'Arabic Typesetting'; font-size:large;background-color:dimgray" />  
+                        @*@Html.ValidationMessageFor(model => model.Image)*@
+
+                           
+                        </div>
+                    <p>
+                        <input class="submit" type="submit" name="submit" id="submit" value="Save" />
+                    </p>
+                </fieldset>
+            }
+
+            <div>
+                <a style="margin-left:315px;padding:15px;" href="~/CarsManagement/index" name="Back">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

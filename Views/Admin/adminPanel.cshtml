@@ -1,0 +1,97 @@
+﻿@model lab.Models.Admin
+
+
+
+@{
+    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
+}
+
+<body>
+    <div class="page-container">
+        
+        <!--/content-inner-->
+        <div class="left-content">
+            
+            <div class="inner-content">
+               
+                <!-- header-starts -->
+                <div class="header-section">
+                    <!--menu-right-->
+                    <div class="top_menu">
+                        <div class="clearfix"></div>
+                        <!--//profile_details-->
+                    </div>
+                    <!--//menu-right-->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- //header-ends -->
+                <div class="outter-wp">
+                    <div style="margin-left:9em">
+                        <h1 style="font-family:'Comic Sans MS' ;font-size:32px;color:gray">Admin Panel</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--//content-inner-->
+        <!--/sidebar-menu-->
+        <div class="sidebar-menu">
+            <header class="logo">
+                <a href="~/Admin/logout" class="sidebar-icon"> <img src="~/images/logout.png"></a>
+                    <span id="logo"> <h1>Admin</h1></span>
+                    <!--<img id="logo" src="" alt="Logo" ""/>-->
+                </a>
+            </header>
+            <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+            <!--/down-->
+            <div class="down">
+                <a href="#"><img src="~/Files/@Session["ImagePath"]"/></a>
+                <a href="#"><span class=" name-caret"></span></a>
+                <p><span>@Session["UserName"]</span></p>
+                <p><span>@Session["Email"]</span></p>
+               
+                
+               
+            </div>
+            <!--//down-->
+            <div class="menu">
+                <ul id="menu">
+                    <li><a href="~/Home/index"> <span>Home</span></a></li>
+                    <li id="menu-academico">
+                        <a href="~/CarsManagement/onlyView"> <span>View All Available cars</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                        </ul>
+                    </li>
+                    <li id="menu-academico">
+                        <a href="~/CarsManagement/addNews"><span>Add NewOffers </span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        </li>
+                    <li>
+                        <a href="~/CarsManagement/showAllNews"><span>Delete old Offers </span> <span class="fa fa-angle-right" style="float: right"></span></a>
+    
+                    </li>
+                  
+                    <li>
+                        <a href="#"><span>Available Cars</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul>
+                            <li><a href="~/CarsManagement/addCar"> Add</a></li>
+                            <li><a href="~/CarsManagement/index"> Delete</a></li>
+                            <li><a href="~/CarsManagement/index"> Update</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Change  Password??", "forgetPassword") <span class="fa fa-angle-right" style="float: right"></span>
+                        
+                    </li>
+                    <li id="menu-academico">
+                       @Html.ActionLink("Create New Account", "adminSignup")  <span class="fa fa-angle-right" style="float: right"></span>
+                        <ul id="menu-academico-sub">
+                           
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</body>;

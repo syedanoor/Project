@@ -1,0 +1,36 @@
+﻿  @model List<lab.Models.News> 
+    <!--start-blog--->
+    <div class="blog">
+        <div class="wrap">
+            <h5>Latest Offers</h5>
+            <div class="blog-top-pagination">
+                <ul>
+                    <li><a href="~/Home/index">Home</a></li>
+                    <li><a href="~/Home/blog"><span>News</span></a></li>
+                </ul>
+            </div>
+            <div class="blog-leftgrids">
+@foreach (var x in Model)
+{
+                <div class="image group">
+                    
+                    <div class="grid images_3_of_1">
+                    <a href="#"><img src="/images/@x.Image"></a>
+                    <span><img src="/images/lable.png" title="lable"></span>
+                    </div>
+                    <div class="grid span_2_of_3">
+                    <p>@x.Description</p>
+                    </div>
+                                 
+                           
+                <div class="artical-links">                  
+                </div>
+            </div> 
+                   }           
+    <div class="clear"> </div>
+      </div>
+    </div>
+
+   
+    
+

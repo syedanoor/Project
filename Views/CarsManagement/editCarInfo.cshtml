@@ -1,0 +1,65 @@
+﻿@model lab.Models.Car
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<div class="main">
+    <h1>Edit Car Info</h1>
+    <div class="content">
+        <div id="container">
+          
+            @using (Html.BeginForm("editCarInfo","CarsManagement",FormMethod.Post, new { enctype="multipart/form-data"}))
+            {
+                <fieldset>
+                   
+                    <div class="form">
+                           @Html.HiddenFor(model => model.Id)
+
+                        
+                        <h3>Car Model</h3>
+                        @Html.TextBoxFor(model => model.Model)
+                        @Html.ValidationMessageFor(model => model.Model)
+
+
+                        <h3>Car Color</h3>
+                        @Html.TextBoxFor(model => model.Color)
+                        @Html.ValidationMessageFor(model => model.Color)
+
+
+                        <h3>Car Status</h3>
+                        @Html.TextBoxFor(model => model.Status)
+                        @Html.ValidationMessageFor(model => model.Status)
+
+                        <h3>Car Price</h3>
+                        @Html.TextBoxFor(model => model.Price)
+                        @Html.ValidationMessageFor(model => model.Price)
+
+
+                        <h3>Car Brand</h3>
+                        @Html.TextBoxFor(model => model.Brand)
+                        @Html.ValidationMessageFor(model => model.Brand)
+
+                        <h3>Car Quantity</h3>
+                        @Html.TextBoxFor(model => model.Quantity)
+                        @Html.ValidationMessageFor(model => model.Quantity)
+
+                        <h3>Car Image Path</h3>
+                        @Html.TextBoxFor(model => model.Image)
+
+                        <h3>Update Car Image Path</h3>
+                        @Html.TextBoxFor(model => model.Image, new{ type = "file" })
+                        @Html.ValidationMessageFor(model => model.Image)
+                       </div>
+                    <p>
+                        <input class="submit" type="submit" name="submit" id="submit"  value="Save" />
+                    </p>
+                </fieldset>
+            }
+
+            <div>
+                <a style="margin-left:315px;padding:15px;" href="~/CarsManagement/index" name="Back">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

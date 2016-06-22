@@ -1,0 +1,35 @@
+﻿@model lab.Models.News
+
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<div class="main">
+    <h1>Do you want to Delete this Info?</h1>
+    <div class="content">
+        <div id="container">
+            <fieldset>
+
+                
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>Car Image: @Model.Image</p><br>
+                </div>
+                <div style="height:30px;width:400px;font-family:'Arabic Typesetting';font-size:22px">
+                    <p>News Description: @Model.Description</p><br>
+                </div>
+                
+            </fieldset>
+        </div>
+
+
+        @using (Html.BeginForm())
+        {
+            //<div class="form">
+
+            <input type="submit" value="Delete" style="height:40px;width:150px;background-color:red;margin-left:230px" />
+            <a style="margin-left:345px;" href="~/CarsManagement/ShowAllNews" name="Back">Back</a>
+
+
+        }
+    </div>

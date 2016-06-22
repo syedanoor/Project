@@ -1,0 +1,82 @@
+﻿@model List<lab.Models.Car>
+@{
+    ViewBag.Title = "index";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="main">
+    <h1>View All Info of Cars</h1>
+    @*<div class="content">*@
+    <div id="container">
+
+
+        <table style="border:double;border-color:black;margin-left:300px;">
+            <tr class="Coulm-name" style="margin-left:10px;margin-right:10px;border:double;border-color:black ;font-size:medium">
+                <th>
+                    Id
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Brand
+                </th>
+
+                <th>
+                    Price
+                </th>
+
+                <th>
+                    Color
+                </th>
+
+                <th>
+                    Image
+                </th>
+
+                <th>
+                    Status
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @item.Id
+                    </td>
+
+                    <td>
+                        @item.Model
+                    </td>
+                    <td>
+                        @item.Brand
+                    </td>
+
+                    <td>
+                        @item.Price
+                    </td>
+
+                    <td>
+                        @item.Color
+                    </td>
+                    <td>
+                        @item.Image
+                    </td>
+                    <td>
+                        @item.Status
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        <a style="margin-left:315px;" href="~/Admin/adminPanel" name="Back">Back</a>
+
+    </div>
+</div>
+@*</div>*@

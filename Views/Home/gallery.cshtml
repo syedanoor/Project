@@ -1,0 +1,44 @@
+﻿@model List<lab.Models.Car>
+
+
+
+    <!---start-services--->
+    <div class="services">
+        <div class="wrap">
+            <h5>Available Cars</h5>
+            <div class="services-top-pagination">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#"><span>Gallery</span></a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <div class="services-grids">
+
+                @foreach (var x in Model)
+                {
+                    <div class="services-grid1">
+                        <div class="Project-gallery">
+                            <a href="~/images/@x.Image"> <img src="~/images/@x.Image"></a>
+                           <h2>Price: @x.Price</h2>
+                           <h2>Model: @x.Model </h2>
+                           <h2>Brand: @x.Brand </h2>
+                        </div>
+                    </div>
+
+                }
+            </div>
+           
+        </div>
+
+
+                <div class="clear"> </div>
+            </div>
+            <div class="clear"> </div>
+            <div class="service-pagenation">
+            
+            </div>
+            <div class="clear"> </div>
+       
+    <!---end-services--->
+    <div class="clear"> </div>

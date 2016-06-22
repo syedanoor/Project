@@ -1,0 +1,39 @@
+﻿@model lab.Models.Admin
+
+
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<body>
+    <div class="main">
+        <h1>Log In</h1>
+        <div class="content">
+            <div id="container">
+               @using(Html.BeginForm("Index","Admin"))
+               {
+                   <fieldset>
+                    <!-- #first_step -->
+                    <div id="first_step">
+                        <div class="form">
+                            <h5>Email</h5>
+                            @Html.TextBoxFor(model => model.Email)
+                           
+                            <h5>Password</h5>
+                            @Html.PasswordFor(model => model.Password)
+                           
+                        </div>
+                        <input class="submit" type="submit" name="submit_first" id="submit_first" value="Submit" />
+                        <h4 style ="text-align:right">  @Html.ActionLink("Forget Password??", "forgetPassword") </h4>
+                        
+                    </div>
+              </fieldset>
+               }
+                
+               </div> 
+                   
+          </div>
+     </div>
+</body>
+
