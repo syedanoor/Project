@@ -1,5 +1,9 @@
-﻿
-@{    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
+﻿@model lab.Models.Admin
+
+
+
+@{
+    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
 }
 
 <body>
@@ -34,7 +38,7 @@
         <div class="sidebar-menu">
             <header class="logo">
                 <a href="~/Admin/logout" class="sidebar-icon"> <img src="~/images/logout.png"></a>
-                    <span id="logo"> Admin</span>
+                    <span id="logo"> <h1>Admin</h1></span>
                     <!--<img id="logo" src="" alt="Logo" ""/>-->
                 </a>
             </header>
