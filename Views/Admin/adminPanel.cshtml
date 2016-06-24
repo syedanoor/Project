@@ -1,9 +1,5 @@
-﻿@model lab.Models.Admin
-
-
-
-@{
-    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
+﻿
+@{    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
 }
 
 <body>
@@ -38,7 +34,7 @@
         <div class="sidebar-menu">
             <header class="logo">
                 <a href="~/Admin/logout" class="sidebar-icon"> <img src="~/images/logout.png"></a>
-                    <span id="logo"> <h1>Admin</h1></span>
+                    <span id="logo"> Admin</span>
                     <!--<img id="logo" src="" alt="Logo" ""/>-->
                 </a>
             </header>
@@ -80,11 +76,11 @@
                         </ul>
                     </li>
                     <li>
-                        @Html.ActionLink("Change  Password??", "forgetPassword") <span class="fa fa-angle-right" style="float: right"></span>
+                        @Html.ActionLink("Change  Password??", "ForgetPassword","Admin") <span class="fa fa-angle-right" style="float: right"></span>
                         
                     </li>
                     <li id="menu-academico">
-                       @Html.ActionLink("Create New Account", "adminSignup")  <span class="fa fa-angle-right" style="float: right"></span>
+                       @Html.ActionLink("Create New Account", "AdminSignup","Admin")  <span class="fa fa-angle-right" style="float: right"></span>
                         <ul id="menu-academico-sub">
                            
                         </ul>
