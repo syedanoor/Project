@@ -1,7 +1,10 @@
-﻿
-@{    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
-}
+﻿@model lab.Models.Admin
 
+
+
+@{
+    Layout = "~/Views/Shared/_adminPanelLayout.cshtml";
+}
 
 <body>
     <div class="page-container">
@@ -35,7 +38,7 @@
         <div class="sidebar-menu">
             <header class="logo">
                 <a href="~/Admin/logout" class="sidebar-icon"> <img src="~/images/logout.png"></a>
-                    <span id="logo"> Admin</span>
+                    <span id="logo"> <h1>Admin</h1></span>
                     <!--<img id="logo" src="" alt="Logo" ""/>-->
                 </a>
             </header>
@@ -48,11 +51,9 @@
                 <p><span>@Session["Email"]</span></p>
                
                 
-              
+               
             </div>
             <!--//down-->
-@using (Html.BeginForm("adminPanel", "Admin"))
-                {
             <div class="menu">
                 <ul id="menu">
                     <li><a href="~/Home/index"> <span>Home</span></a></li>
@@ -79,19 +80,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="~/Admin/adminSignup"> Create new Account </a>
+                        @Html.ActionLink("Change  Password??", "forgetPassword") <span class="fa fa-angle-right" style="float: right"></span>
                         
                     </li>
                     <li id="menu-academico">
-                        <a href="~/Admin/forgetPassword"> Change Password</a>
-                         <span class="fa fa-angle-right" style="float: right"></span>
+                       @Html.ActionLink("Create New Account", "adminSignup")  <span class="fa fa-angle-right" style="float: right"></span>
                         <ul id="menu-academico-sub">
                            
                         </ul>
                     </li>
                 </ul>
             </div>
-}
         </div>
         <div class="clearfix"></div>
     </div>
